@@ -10,3 +10,8 @@ Moreover, this example was initially set up to run using Replit.com
 >> poetry install
 
 >> poetry run python main.py
+
+
+# Integrantes do Grupo: 
+
+# Maria Paula Gonçalves Vieira - 769205
