@@ -13,3 +13,4 @@ Moreover, this example was initially set up to run using Replit.com
 
 ## NOME DOS INTEGRANTES
 Carlos Eduardo 769877
+Allan Corço de Araujo 769870
