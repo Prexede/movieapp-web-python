@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+{% include 'menu.html' %}
+
+<div class="container">
+  <h2>Edit Movie</h2>
+  <form method="post">
+    <div class="mb-3">
+      <label for="movie_name" class="form-label">Movie Name:</label>
+      <input type="text" class="form-control" id="movie_name" name="movie_name" value="{{ movie.name }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="movie_year" class="form-label">Movie Year:</label>
+      <input type="number" class="form-control" id="movie_year" name="movie_year" value="{{ movie.year }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Movie</button>
+  </form>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

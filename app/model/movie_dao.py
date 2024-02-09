@@ -11,8 +11,6 @@ class MovieDao:
     movies = []
     for row in cursor.fetchall():
       movies.append(Movie(row[0], row[1], row[2]))
-
-    # Close the cursor and connection
     cursor.close()
     conn.close()
 
@@ -26,10 +24,7 @@ class MovieDao:
         movie.year,
     )
     cursor.execute("INSERT INTO movie (name, year) VALUES (?, ?);", new_movie)
-
-    # Commit the changes to the database
     conn.commit()
-    # Close the cursor and connection
     cursor.close()
     conn.close()
 
@@ -37,9 +32,29 @@ class MovieDao:
     conn = Database.get_connection()
     cursor = conn.cursor()
     cursor.execute("DELETE FROM movie WHERE id=?;", (iid, ))
-
-    # Commit the changes to the database
     conn.commit()
-    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+
+ #Funçao para buscar filme pelo ID
+  def get(self, movie_id):
+    conn = Database.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, year FROM movie WHERE id = ?;",
+                   (movie_id, ))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    if row:
+      return Movie(row[0], row[1], row[2])
+    return None
+  
+  #Função para atualizar filme
+  def update(self, movie):
+    conn = Database.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE movie SET name = ?, year = ? WHERE id = ?;",
+                   (movie.name, movie.year, movie.id))
+    conn.commit()
     cursor.close()
     conn.close()
