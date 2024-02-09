@@ -18,7 +18,7 @@
         <th scope="row">{{ loop.index0 + 1 }}</th>
         <td>{{ movie.name }}</td>
         <td>{{ movie.year }}</td>
-        <td><a href="/movie?id={{ movie.id }}">[edit]</a> 
+        <td><a href="/edit_movie/{{ movie.id }}">[edit]</a>
             <a data-bs-toggle="modal" data-bs-target="#confirmModal" href="/del_movie?id={{ movie.id }}" onclick="setMovie(this)">[delete]</a></td>
       </tr>
       {% endfor %}
