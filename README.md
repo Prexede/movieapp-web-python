@@ -11,7 +11,7 @@ Moreover, this example was initially set up to run using Replit.com
 
 >> poetry run python main.py
 
-
-# Integrantes do Grupo: 
-
+## NOME DOS INTEGRANTES
+# Carlos Eduardo 769877
+# Allan Corço de Araujo 769870
 # Maria Paula Gonçalves Vieira - 769205
